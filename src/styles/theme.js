@@ -2,8 +2,8 @@ export const theme = {
     colors: {
         primary: 'rgb(60, 72, 86)',
         secondary: 'rgba(60,72,86,0.7)',
-        //accent: '#e63786',
-        accent: '#2db34a',
+        accent: '#e63786',
+        // accent: '#2db34a',
 
         white: 'white',
         background: 'white',

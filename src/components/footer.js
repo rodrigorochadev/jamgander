@@ -43,7 +43,7 @@ const Footer = () => {
             <FooterSection>
                 <FooterBrand>
                     <button style={{padding: 0, background: 0}} onClick={() => scrollTo('#home')}>
-                        <img src={jamgoose} alt="jamgoose" style={{width: '50px', height: '50px'}}/>
+                        <img src={jamgoose} alt="jamgander" style={{width: '50px', height: '50px'}}/>
                     </button>
                 </FooterBrand>
             </FooterSection>
