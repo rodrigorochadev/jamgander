@@ -1,35 +1,39 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+// import { theme } from "../styles/theme"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
+import jamgoose from '../assets/images/logo.svg'
+// import { Container } from "../styles/globalStyles"
+
+const Header = () => {
+
+  return(
+    <header
       style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        position: 'absolute',
+        top: 0,
+        width: '100vw',
+        padding: '20px 0',
+        // background: `${theme.colors.accent}`,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: "space-between",
       }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+    > 
+        <div id="home">
+          <Link to="/" >
+            <img src={jamgoose} style={{width: '40px', height: '40px'}} alt="jamgoose" />
+          </Link>
+        </div>
+        <button>
+          JAMGOOSE
+        </button>
+        
+    </header>
+    
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
