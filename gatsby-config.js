@@ -52,6 +52,30 @@ module.exports = {
         ],
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-web-font-loader`,
+    //   options: {
+    //     custom: {
+    //       families: [`Poppins`, `Merienda`],
+    //       urls: [`/fonts/fonts.css`]
+    //     }
+    //   }
+    // },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Poppins`,
+            variants: ['400', '700']
+          },
+          {
+            family: `Merienda`,
+            variants: [`700`]
+          },
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -69,7 +93,7 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-preload-link-crossorigin`,
+    // `gatsby-plugin-preload-link-crossorigin`,
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-preact`,

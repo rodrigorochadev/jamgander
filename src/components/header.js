@@ -5,6 +5,7 @@ import styled from "styled-components"
 // import { theme } from "../styles/theme"
 
 import jamgoose from '../assets/images/logo.svg'
+import { Container } from "../styles/globalStyles"
 import { theme } from "../styles/theme"
 // import { Container } from "../styles/globalStyles"
 
@@ -15,7 +16,6 @@ const Header = () => {
         <Logo id="home">
           <Link to="/" ><img src={jamgoose} alt="jamgander" /> </Link>
         </Logo>
-        
     </HeaderContainer>
     
   )
@@ -34,12 +34,12 @@ export default Header
 const HeaderContainer = styled.div`
   position: absolute;
   top: 0;
-  width: 100vw;
+  width: 100%;
   padding: 20px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 9;
 `
 
 const Logo = styled.div`

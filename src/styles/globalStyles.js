@@ -47,7 +47,7 @@ const styles = () => `
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-
+        
         ::-moz-selection { /* Code for Firefox */
             color: ${theme.colors.background};
             background: ${theme.colors.accent};
@@ -69,7 +69,7 @@ const styles = () => `
         border: none;
         border-radius: 20px;
         background: ${theme.colors.accent};
-        color: white;
+        color: black;
         font-size: 1.1rem;
         transition: ${theme.transitions.default};
         font-weight: bold;
@@ -82,6 +82,7 @@ const styles = () => `
     }
 
     body {
+        overflow-x: hidden;
         color: ${theme.colors.secondary};
         font-size: ${theme.fontSizes.base};
         font-family: ${theme.fontFamilies.regular};

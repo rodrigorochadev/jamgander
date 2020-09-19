@@ -51,7 +51,7 @@ const Footer = () => {
             <FooterContent>
 
                 <FooterSection>
-                    <h3>Quick Links</h3>
+                    <h2>Quick Links</h2>
                     <FooterNavigation>
                         
                         <ul>
@@ -64,7 +64,7 @@ const Footer = () => {
                 </FooterSection>
                 
                 <FooterSection>
-                    <h3>Social</h3>
+                    <h2>Social</h2>
                     <FooterSocial>
                         {data.allMarkdownRemark.edges.map(
                             social => {
@@ -102,7 +102,7 @@ export const FooterContainer = styled.div`
 export const FooterSection = styled.div`
     margin-bottom: 30px;
 
-    h3 {
+    h2 {
         margin-bottom: 10px;
     }
     
@@ -132,6 +132,7 @@ export const FooterNavigation = styled.div`
     }
 
     a {
+        line-height: 2rem;
         &:hover {
             cursor: pointer;
             transition: ${theme.transitions.default};
@@ -171,8 +172,8 @@ export const FooterContent = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
 
-    h3 {
-        font-family: 'Poppins';
+    h2 {
+        font-family: 'Poppins', sans-serif;
         font-weight: bold;
         color: white;
     }
