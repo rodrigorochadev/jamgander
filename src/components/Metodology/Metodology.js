@@ -1,16 +1,15 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react"
-import {SectionTitle, Separator, CardsFlex} from "../../styles/globalStyles";
+import { SectionTitle, CardsFlex, Separator } from "../../styles/globalStyles"
+import CardItem from "../Cards/cardItem"
 
-import CardItem from '../Cards/cardItem'
+const Metodology = () => {
 
-const Services = () => {
-    
     const data = useStaticQuery(graphql`
-        query ServicesQuery {
+        query MetodologyQuery {
             allMarkdownRemark(
                 sort: {fields: frontmatter___id}
-                filter: {frontmatter: {type: {eq: "service"}}}) {
+                filter: {frontmatter: {type: {eq: "metodology"}}}) {
                 edges {
                     node {
                         frontmatter {
@@ -34,11 +33,11 @@ const Services = () => {
     return(
         <>
             <SectionTitle>
-                <h1>What can we do for you?</h1>
-                <p>Check out our list of services. Need anything else? Contact us and we try to give you what you need.</p>
+                <h1>How we work</h1>
+                <p>Every project is different, but somethings always remain the same.</p>
                 <Separator />
             </SectionTitle>
-            
+
             <CardsFlex>
                 {data.allMarkdownRemark.edges.map(
                     service => {
@@ -54,12 +53,10 @@ const Services = () => {
                     }
                 )}
             </CardsFlex>
-            
         </>
     )
 
+
 }
 
-export default Services
-
-
+export default Metodology

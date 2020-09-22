@@ -4,10 +4,10 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Jamgander Web Development`,
+    title: `Jamgoose Web Development`,
     description: `We raise your business to a better online presence with a better online presence.`,
     author: `@rodrigorocha`,
-    siteUrl: `https://jamgander.com`
+    siteUrl: `https://jamgoose.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -35,8 +35,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `projects`,
-        path: `${__dirname}/content/projects`,
+        name: `metodology`,
+        path: `${__dirname}/content/metodology`,
       },
     },
     {
@@ -52,15 +52,6 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-web-font-loader`,
-    //   options: {
-    //     custom: {
-    //       families: [`Poppins`, `Merienda`],
-    //       urls: [`/fonts/fonts.css`]
-    //     }
-    //   }
-    // },
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {

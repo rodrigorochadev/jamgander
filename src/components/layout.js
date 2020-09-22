@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Container>
-          <Header siteTitle="JAMGOOSE" />
+          <Header />
         </Container>
         
           <main>{children}</main>

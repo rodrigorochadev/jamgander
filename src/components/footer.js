@@ -1,50 +1,25 @@
-import { graphql, Link, useStaticQuery } from 'gatsby'
+import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import { Container } from '../styles/globalStyles'
+import { Container, NonStyledButton } from '../styles/globalStyles'
 import { theme } from '../styles/theme'
-import Img from 'gatsby-image'
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
-
-
-import jamgoose from '../assets/images/logo.svg'
+import { Instagram, Messenger, Facebook, Dribbble, Behance, Logo } from '../assets/svg/social'
 
 const Footer = () => {
-
-    const data = useStaticQuery(graphql`
-        query SocialQuery {
-            allMarkdownRemark(
-                sort: {fields: frontmatter___id}
-                filter: {frontmatter: {type: {eq: "social"}}}) {
-                edges {
-                    node {
-                        frontmatter {
-                            name
-                            id
-                            url
-                            image {
-                                childImageSharp {
-                                    fixed(width: 25) {
-                                        ...GatsbyImageSharpFixed_tracedSVG
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    `);
 
     return(
         <FooterContainer>
         <Container>
             <FooterSection>
                 <FooterBrand>
-                    <button style={{padding: 0, background: 0}} onClick={() => scrollTo('#home')}>
-                        <img src={jamgoose} alt="jamgander" style={{width: '50px', height: '50px'}}/>
-                    </button>
+                    <NonStyledButton>
+                        <button aria-label="jamgoose" onClick={() => scrollTo('#home')}>
+                            <Logo />
+                        </button>
+                    </NonStyledButton>
+                    
                 </FooterBrand>
             </FooterSection>
             
@@ -66,22 +41,31 @@ const Footer = () => {
                 <FooterSection>
                     <h2>Social</h2>
                     <FooterSocial>
-                        {data.allMarkdownRemark.edges.map(
-                            social => {
-                                return(
-                                    <FooterImgWrapper>
-                                        <a href={social.node.frontmatter.url} rel="noreferrer" target="_blank">
-                                            <Img fixed={social.node.frontmatter.image.childImageSharp.fixed} alt={social.node.frontmatter.name} />
-                                        </a>
-                                    </FooterImgWrapper>
-                                )
-                            }
-                        )}
+                        <a href="https://instagram.com/pathfinderdesigns" rel="noreferrer" target="_blank" aria-label="Instagram">
+                            <Instagram />
+                        </a>
+                        
+                        <a href="https://facebook.com/pathfinderdesigns" rel="noreferrer" target="_blank" aria-label="Facebook">
+                            <Facebook />
+                        </a>
+                        
+                        <a href="https://m.me/pathfinderdesigns" rel="noreferrer" target="_blank" aria-label="Messenger">
+                            <Messenger />
+                        </a>
+                    
+                        <a href="https://behance.net/rodrigo-rocha" rel="noreferrer" target="_blank" aria-label="Behance">
+                            <Behance />
+                        </a>
+                    
+                        <a href="https://dribbble.com/rodrigorocha" rel="noreferrer" target="_blank" aria-label="Dribbble">
+                            <Dribbble />
+                        </a>
+                        
                     </FooterSocial>
                 </FooterSection>
             </FooterContent>
             <FooterCopyright>
-                JAMGANDER © {new Date().getFullYear()}. All rights reserved.
+                JAMGOOSE © {new Date().getFullYear()}. All rights reserved.
             </FooterCopyright>
         </Container>
         </FooterContainer>
@@ -115,13 +99,10 @@ export const FooterCopyright = styled.div`
 export const FooterBrand = styled.div`
     text-align: left;
 
-    img {
-        filter: invert(100%);
-
-        &:hover {
-            filter: ${theme.filters.filterToAccent};
-            cursor: pointer;
-        }
+    svg:hover {
+        transition: ${theme.transitions.default};
+        fill: ${theme.colors.accent};
+        cursor: pointer;
     }
 `
 
@@ -146,24 +127,21 @@ export const FooterSocial = styled.div`
     display: flex;
     flex-wrap: wrap;
 
-    picture {
+    a {
         margin-right: 30px;
+    
+
+        svg:hover {
+            transition: ${theme.transitions.default};
+            fill: ${theme.colors.accent};
+            cursor: pointer;
+        }
+
+        
 
         &::last-child {
             margin-right: 0px;
         }
-
-        
-    }
-`
-
-export const FooterImgWrapper = styled.div`
-    margin-right: 30px;
-    filter: invert(100%);
-
-    &:hover {
-        cursor: pointer;
-        filter: ${theme.filters.filterToAccent};
     }
 `
 

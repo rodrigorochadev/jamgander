@@ -1,21 +1,19 @@
 import { Link } from "gatsby"
-// import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-// import { theme } from "../styles/theme"
 
-import jamgoose from '../assets/images/logo.svg'
-import { Container } from "../styles/globalStyles"
 import { theme } from "../styles/theme"
-// import { Container } from "../styles/globalStyles"
+import { Logo } from '../assets/svg/social'
 
 const Header = () => {
 
   return(
-    <HeaderContainer>
-        <Logo id="home">
-          <Link to="/" ><img src={jamgoose} alt="jamgander" /> </Link>
-        </Logo>
+    <HeaderContainer id="home">
+      <LogoContainer>
+        <Link to="/" aria-label="jamgoose">
+          <Logo />
+        </Link>
+      </LogoContainer>       
     </HeaderContainer>
     
   )
@@ -40,20 +38,20 @@ const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   z-index: 9;
-`
 
-const Logo = styled.div`
-  
-  a {
-    img {
+`
+const LogoContainer = styled.div`
+
+    svg {
       width: 40px;
       height: 40px;
+      fill: #000;
+      transition: ${theme.transitions.default};
 
       &:hover {
         cursor: pointer;
-        filter: ${theme.filters.filterToAccent};
+        fill: ${theme.colors.accent};
       }
     }
-  }
-
+  
 `

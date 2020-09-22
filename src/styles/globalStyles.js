@@ -42,6 +42,42 @@ export const Container = styled.div`
     `}
 `
 
+// export const Section = styled.div`
+//     background-color: #ddd;
+//     border-radius: 20px;
+//     padding: -10px;
+// `
+
+export const UppercaseDescription = styled.div`
+    text-transform: uppercase;
+    font-weight: bold;
+`
+
+export const Separator = styled.div`
+    margin-bottom: 40px;
+`
+
+export const CardsFlex = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    @media ${theme.media.small} {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+`
+
+export const NonStyledButton = styled.div`
+
+    button {
+        padding: 0;
+        background: transparent;
+        transition: none !important; 
+        transform: none !important;
+    }
+`
+
 const styles = () => `
     * {
         margin: 0;
@@ -81,8 +117,11 @@ const styles = () => `
         }
     }
 
-    body {
+    html, body {
         overflow-x: hidden;
+    }
+
+    body {
         color: ${theme.colors.secondary};
         font-size: ${theme.fontSizes.base};
         font-family: ${theme.fontFamilies.regular};

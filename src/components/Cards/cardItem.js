@@ -2,22 +2,23 @@ import React from 'react'
 import Img from 'gatsby-image'
 
 import styled from 'styled-components'
+import {theme} from '../../styles/theme'
 
-const ServiceItem = (props) => {
+const CardItem = (props) => {
 
     return(
-        <ServiceCard>
-            <ServiceCardId>{props.id}</ServiceCardId>
+        <Card>
+            <CardId>{props.id}</CardId>
             <Img fixed={props.image} alt={props.title}></Img>
             <h2>{props.title}</h2>
             <Description>{props.description}</Description>
-        </ServiceCard>
+        </Card>
     )
 }
 
-export default ServiceItem
+export default CardItem
 
-const ServiceCard = styled.div`
+const Card = styled.div`
     position: relative;
     width: 100%;
     height: auto;
@@ -26,20 +27,27 @@ const ServiceCard = styled.div`
     &::last-child {
         margin-bottom: 0;
     }
+
+    @media ${theme.media.small} {
+        width: 35%;
+    }
 `
 
-const ServiceCardId = styled.div`
+const CardId = styled.div`
     font-family: 'Merienda', cursive;
     position: absolute;
     top: -100px;
     right: 0%;
     font-weight: 700;
-    /* opacity: 10%; */
     font-size: 10rem;
 
     background: -webkit-linear-gradient(rgba(0,0,0,0.1) 0%, rgba(255, 255, 255, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media ${theme.media.small} {
+        top: -50px;
+    }
 `
 const Description = styled.div`
     margin-top: 10px;
