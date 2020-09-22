@@ -3,12 +3,17 @@ import { createGlobalStyle } from 'styled-components'
 import { theme } from './theme'
 
 export const Padding = styled.div`
-    margin: 50px 0;
+    margin: 100px 0;
 `
 
 
 export const SectionTitle = styled.div`
     margin-bottom: 60px;
+
+    @media ${theme.media.small} {
+        text-align: center;
+        margin-bottom: 100px;
+    }
 `
 
 export const Container = styled.div`
@@ -41,6 +46,31 @@ export const Container = styled.div`
       max-width: 100% !important;
     `}
 `
+export const Flex = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  ${props =>
+    props.spaceBetween &&
+    css`
+      justify-content: space-between;
+    `};
+  ${props =>
+    props.flexEnd &&
+    css`
+      justify-content: flex-end;
+    `};
+  ${props =>
+    props.alignTop &&
+    css`
+      align-items: flex-start;
+    `};
+  ${props =>
+    props.noHeight &&
+    css`
+      height: 0;
+    `};
+`
 
 // export const Section = styled.div`
 //     background-color: #ddd;
@@ -71,10 +101,32 @@ export const CardsFlex = styled.div`
 export const NonStyledButton = styled.div`
 
     button {
+        border: none;
         padding: 0;
         background: transparent;
         transition: none !important; 
         transform: none !important;
+    }
+`
+
+export const Button = styled.div`
+    button {
+        padding: 15px 25px;
+        border: 1px solid ${theme.colors.accent};
+        border-radius: 10px;
+        background: ${theme.colors.background};
+        color: ${theme.colors.primary};
+        font-size: 1.1rem;
+        transition: ${theme.transitions.default};
+        font-weight: bold;
+        z-index: 10;
+        
+        &:hover {
+            cursor: pointer;
+            background: ${theme.colors.accent};
+            color: white;
+            /* transform: scale(1.1); */
+        }
     }
 `
 
@@ -98,23 +150,6 @@ const styles = () => `
     h1, h2, h3, h4, h5 {
         color: ${theme.colors.primary};
         font-family: ${theme.fontFamilies.headings};
-    }
-
-    button {
-        padding: 15px 25px;
-        border: none;
-        border-radius: 20px;
-        background: ${theme.colors.accent};
-        color: black;
-        font-size: 1.1rem;
-        transition: ${theme.transitions.default};
-        font-weight: bold;
-        z-index: 10;
-        
-        &:hover {
-            cursor: pointer;
-            transform: scale(1.1);
-        }
     }
 
     html, body {

@@ -12,6 +12,7 @@ const Footer = () => {
     return(
         <FooterContainer>
         <Container>
+            <FooterContent>
             <FooterSection>
                 <FooterBrand>
                     <NonStyledButton>
@@ -21,9 +22,7 @@ const Footer = () => {
                     </NonStyledButton>
                     
                 </FooterBrand>
-            </FooterSection>
-            
-            <FooterContent>
+                </FooterSection>
 
                 <FooterSection>
                     <h2>Quick Links</h2>
@@ -63,7 +62,10 @@ const Footer = () => {
                         
                     </FooterSocial>
                 </FooterSection>
+            
+                
             </FooterContent>
+            
             <FooterCopyright>
                 JAMGOOSE © {new Date().getFullYear()}. All rights reserved.
             </FooterCopyright>
@@ -78,7 +80,7 @@ export default Footer
 // Styles
 
 export const FooterContainer = styled.div`
-    background: ${theme.colors.primary};
+    background: #111;
     color: ${theme.colors.white};
     padding: 30px 0;
 `
@@ -94,6 +96,10 @@ export const FooterSection = styled.div`
 
 export const FooterCopyright = styled.div`
     text-align: left;
+
+    @media ${theme.media.small} {
+        text-align: center;
+    }
 `
 
 export const FooterBrand = styled.div`
@@ -148,7 +154,11 @@ export const FooterSocial = styled.div`
 export const FooterContent = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
+
+    @media ${theme.media.small} {
+        flex-direction: row;
+    }
 
     h2 {
         font-family: 'Poppins', sans-serif;

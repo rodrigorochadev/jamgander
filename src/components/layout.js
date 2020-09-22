@@ -13,7 +13,7 @@ import Header from "./header"
 import { ThemeProvider } from 'styled-components'
 import { theme } from '../styles/theme'
 
-import { Container, GlobalStyle } from "../styles/globalStyles"
+import { GlobalStyle } from "../styles/globalStyles"
 import Footer from "./footer"
 
 
@@ -23,9 +23,9 @@ const Layout = ({ children }) => {
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Container>
+        <div style={{padding: '0 10vw'}}>
           <Header />
-        </Container>
+        </div>
         
           <main>{children}</main>
           <Footer />
