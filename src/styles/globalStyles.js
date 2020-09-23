@@ -10,6 +10,10 @@ export const Padding = styled.div`
 export const SectionTitle = styled.div`
     margin-bottom: 60px;
 
+    h1 {
+        margin-bottom: 5px;
+    }
+
     @media ${theme.media.small} {
         text-align: center;
         margin-bottom: 100px;

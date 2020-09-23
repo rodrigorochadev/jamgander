@@ -1,8 +1,9 @@
-import { graphql, useStaticQuery } from "gatsby";
 import React from "react"
-import {SectionTitle, Separator, CardsFlex} from "../../styles/globalStyles";
 
 import CardItem from '../Cards/cardItem'
+
+import { graphql, useStaticQuery } from "gatsby";
+import {SectionTitle, Separator, CardsFlex} from "../../styles/globalStyles";
 
 const Services = () => {
     
@@ -32,7 +33,7 @@ const Services = () => {
     `);
 
     return(
-        <>
+        <div id="services">
             <SectionTitle>
                 <h1>What can we do for you?</h1>
                 <p>Check out our list of services. Need anything else? Contact us and we try to give you what you need.</p>
@@ -55,7 +56,7 @@ const Services = () => {
                 )}
             </CardsFlex>
             
-        </>
+        </div>
     )
 
 }

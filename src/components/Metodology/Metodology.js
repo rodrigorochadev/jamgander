@@ -1,7 +1,9 @@
-import { graphql, useStaticQuery } from "gatsby";
 import React from "react"
-import { SectionTitle, CardsFlex, Separator } from "../../styles/globalStyles"
 import CardItem from "../Cards/cardItem"
+
+import { graphql, useStaticQuery } from "gatsby";
+import { SectionTitle, CardsFlex, Separator } from "../../styles/globalStyles"
+
 
 const Metodology = () => {
 
@@ -55,8 +57,6 @@ const Metodology = () => {
             </CardsFlex>
         </>
     )
-
-
 }
 
 export default Metodology

@@ -1,13 +1,11 @@
-import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import {SectionTitle, Separator, ImageFlex, SectionImage} from '../../styles/globalStyles'
-
 import Img from 'gatsby-image'
 
+import {SectionTitle, Separator, ImageFlex, SectionImage} from '../../styles/globalStyles'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const SectionWithImage = (props) => {
 
-    
     const data = useStaticQuery(graphql`
         query {
             growth: file(relativePath: {eq: "growth.png"}) {
@@ -37,22 +35,18 @@ const SectionWithImage = (props) => {
     }
 
     return(
-        
-
         <>
-        <SectionTitle>
-            <h1>{props.title}</h1>
-            <p>{props.description}</p>
-             <Separator />  
-        </SectionTitle>
+            <SectionTitle>
+                <h1>{props.title}</h1>
+                <p>{props.description}</p>
+                <Separator />  
+            </SectionTitle>
 
-        {/* {} */}
-        <ImageFlex >
-            <SectionImage>
-                <Img fluid={img1} alt={props.alt} />                
-            </SectionImage>
-        </ImageFlex>
-        
+            <ImageFlex >
+                <SectionImage>
+                    <Img fluid={img1} alt={props.alt} />                
+                </SectionImage>
+            </ImageFlex>
         </>
     )
 }

@@ -7,7 +7,10 @@ module.exports = {
     title: `Jamgoose Web Development`,
     description: `We raise your business to a better online presence with a better online presence.`,
     author: `@rodrigorocha`,
-    siteUrl: `https://jamgoose.com`
+    siteUrl: `https://jamgoose.com`,
+    image: `https://firebasestorage.googleapis.com/v0/b/pathfinder-designs.appspot.com/o/social%2Fjamgoose-share.jpg?alt=media&token=49f7155b-2366-4bb0-8bba-ad3612c25ddf`,
+    url: "https://jamgoose.netlify.app",
+    keywords: "Websites, Apps, Web Development, Graphic Design, UI/UX, Digital Marketing, SEO, Performance, Fast, Accessibility"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -1,44 +1,30 @@
-import { Link } from 'gatsby'
 import React from 'react'
-import styled from 'styled-components'
-import { Container, NonStyledButton } from '../styles/globalStyles'
-import { theme } from '../styles/theme'
 import scrollTo from 'gatsby-plugin-smoothscroll';
+
+import { Container, NonStyledButton } from '../styles/globalStyles'
+import { FooterContainer, FooterSection, FooterCopyright, FooterBrand, FooterSocial, FooterContent } from '../styles/componentStyles'
 
 import { Instagram, Messenger, Facebook, Dribbble, Behance, Logo } from '../assets/svg/social'
 
 const Footer = () => {
 
     return(
-        <FooterContainer>
+        <FooterContainer id="footer">
         <Container>
             <FooterContent>
-            <FooterSection>
-                <FooterBrand>
-                    <NonStyledButton>
-                        <button aria-label="jamgoose" onClick={() => scrollTo('#home')}>
-                            <Logo />
-                        </button>
-                    </NonStyledButton>
-                    
-                </FooterBrand>
-                </FooterSection>
-
                 <FooterSection>
-                    <h2>Quick Links</h2>
-                    <FooterNavigation>
+                    <FooterBrand>
+                        <NonStyledButton>
+                            <button aria-label="jamgoose" onClick={() => scrollTo('#home')}>
+                                <Logo />
+                            </button>
+                        </NonStyledButton>
                         
-                        <ul>
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/">Portfolio</Link></li>
-                            <li><Link to="/">Contacts</Link></li>
-                        </ul>
-                    </FooterNavigation>
-
+                    </FooterBrand>
                 </FooterSection>
-                
+
                 <FooterSection>
-                    <h2>Social</h2>
+                    
                     <FooterSocial>
                         <a href="https://instagram.com/pathfinderdesigns" rel="noreferrer" target="_blank" aria-label="Instagram">
                             <Instagram />
@@ -76,98 +62,3 @@ const Footer = () => {
 }
 
 export default Footer
-
-// Styles
-
-export const FooterContainer = styled.div`
-    background: #111;
-    color: ${theme.colors.white};
-    padding: 30px 0;
-`
-
-export const FooterSection = styled.div`
-    margin-bottom: 30px;
-
-    h2 {
-        margin-bottom: 10px;
-    }
-    
-`
-
-export const FooterCopyright = styled.div`
-    text-align: left;
-
-    @media ${theme.media.small} {
-        text-align: center;
-    }
-`
-
-export const FooterBrand = styled.div`
-    text-align: left;
-
-    svg:hover {
-        transition: ${theme.transitions.default};
-        fill: ${theme.colors.accent};
-        cursor: pointer;
-    }
-`
-
-export const FooterNavigation = styled.div`
-
-    ul {
-        list-style: none;
-    }
-
-    a {
-        line-height: 2rem;
-        &:hover {
-            cursor: pointer;
-            transition: ${theme.transitions.default};
-            color: ${theme.colors.accent};
-        }
-    }
-`
-
-export const FooterSocial = styled.div`
-
-    display: flex;
-    flex-wrap: wrap;
-
-    a {
-        margin-right: 30px;
-    
-
-        svg:hover {
-            transition: ${theme.transitions.default};
-            fill: ${theme.colors.accent};
-            cursor: pointer;
-        }
-
-        
-
-        &::last-child {
-            margin-right: 0px;
-        }
-    }
-`
-
-export const FooterContent = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    @media ${theme.media.small} {
-        flex-direction: row;
-    }
-
-    h2 {
-        font-family: 'Poppins', sans-serif;
-        font-weight: bold;
-        color: white;
-    }
-
-    a {
-        text-decoration: none;
-        color: white;
-    }
-`
