@@ -1,32 +1,34 @@
-// import { Link } from 'gatsby'
-// import React from 'react'
+import React from 'react'
 
-// import { Button, SectionTitle, Separator } from "../../styles/globalStyles"
+import { Button, SectionTitle } from "../../styles/globalStyles"
 
-// const Portfolio = () => {
+const Portfolio = () => {
 
-//     return(
-//         <>
-//             <SectionTitle>
-//                 <h1>Some of our projects</h1>
-//                 <p>Take a look at our list of some selected projects. Get inspired and let’s build something together!</p>
-//                 <Separator />
-//                 <div style={{display: 'flex', justifyContent: 'space-around', columnGap: '30px'}}>
-//                     <Button>
-//                         <a to="https://dribbble.com/rodrigorocha">
-//                             <button>Go to Dribbble</button>
-//                         </a>
-//                     </Button>
-//                     <Button>
-//                         <a to="https://behance.net/rodrigo-rocha">
-//                             <button>Go to Behance</button>
-//                         </a>
-//                     </Button>
-//                 </div>
-                
-//             </SectionTitle>
-//         </>
-//     )
-// }
+    return(
+        <>
+            <SectionTitle>
+                <h1>Some of our projects</h1>
+                <p>Take a look at our portfolio pages. Get inspired and let’s build something together!</p>
+            </SectionTitle>
 
-// export default Portfolio
+            
+            <div style={{display: 'flex', justifyContent: 'space-around', columnGap: '30px'}}>
+                <Button>
+                    <a href="https://dribbble.com/rodrigorocha" aria-label="Dribbble Button" rel="noreferrer" target="_blank">
+                        <button>Go to Dribbble</button>
+                    </a>
+                </Button>
+                <Button>
+                    <a href="https://behance.net/rodrigo-rocha" aria-label="Behance Button" rel="noreferrer" target="_blank">
+                        <button>Go to Behance</button>
+                    </a>
+                </Button>
+
+            </div>
+
+            
+        </>
+    )
+}
+
+export default Portfolio

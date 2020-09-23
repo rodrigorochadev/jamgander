@@ -5,10 +5,10 @@ import Services from "../components/Services/services"
 
 import { Container, Padding } from "../styles/globalStyles"
 import Banner from '../components/Banner/Banner'
-import Info from "../components/Info/Info"
-import Metodology from "../components/Metodology/Metodology"
-// import Portfolio from "../components/Portfolio/Porfolio"
 
+import Metodology from "../components/Metodology/Metodology"
+import Portfolio from "../components/Portfolio/Porfolio"
+import SectionWithImage from "../components/SectionWithImage/SectionWithImage"
 
 
 const IndexPage = (props) => {
@@ -23,23 +23,32 @@ const IndexPage = (props) => {
       <Padding>
         <Services />
       </Padding>
-      
-        <Info right
-          title="Keeping users invested" 
-          description="Slow websites make users stop browsing and that can lead to poor business decisions. Fast and minimalistic designed websites keep users invested and interested. Also it's more environmental friendly because it consumes less energy."
+
+      <Padding>
+        <SectionWithImage 
+          title="High performance"
+          description="When a customer goes to a restaurant, slow service leads to impantience, frustration and poor reviews. Poor reviews, means less people eat at that restaurant, which is equivalent as less revenue. Similarly, slow websites result is poor search engine rankings, negative user experience and worst case scenario not seeing the website. A slow website is like a slow serving restaurant, eventually, customers will stop visiting."
+          image="growth"
+          alt="Growth"
         />
-      
+      </Padding>
 
       <Padding>
         <Metodology />
-        
       </Padding>
         
+      <Padding>
+        <SectionWithImage 
+          title="Site Analytics"
+          description="We provide you with analytics of your website. This is important because you get to know your visitors, leading to better user experience. Analyzing your website data, can be used to remove unnecessary features, know the demographic of your audience, trafic directed to your website, amongst other things."
+          image="analytics"
+          alt="Analytics"
+        />
+      </Padding>
       
-      
-      {/* <Padding>
+      <Padding>
         <Portfolio />
-      </Padding> */}
+      </Padding>
       
     </Container>
     

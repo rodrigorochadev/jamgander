@@ -130,6 +130,34 @@ export const Button = styled.div`
     }
 `
 
+// Images
+
+export const ImageFlex = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: left;
+
+    @media ${theme.media.small} {
+        justify-content: center;
+        
+    }
+`
+
+export const SectionImage = styled.div`
+
+    
+    height: auto;
+    width: 250px;
+
+    @media ${theme.media.small} {
+        width: 300px;
+    }
+
+    @media ${theme.media.medium} {
+        width: 400px;
+    }
+`
+
 const styles = () => `
     * {
         margin: 0;
